@@ -1,1 +1,1 @@
-# smart-queue-api
+# smart-queue-api with quarkus
