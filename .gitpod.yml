@@ -1,3 +1,0 @@
-tasks:
-  - name: instalando
-    command: sdk install quarkus
