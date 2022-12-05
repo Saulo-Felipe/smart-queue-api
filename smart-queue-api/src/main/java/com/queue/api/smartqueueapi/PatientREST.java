@@ -29,16 +29,15 @@ public class PatientREST {
 
   @PostMapping
   public void createPatient(@RequestBody Patient patient) {
-    System.out.println("Adicionando: , "+patient.toString());
+    System.out.println("[create]: , "+patient.getName());
     patientRepository.save(patient);
   }
 
   @PutMapping
   public void updatePatient(@RequestBody Patient patient) {
-    System.out.println("yout id: "+patient.getId());
 
     if (patient.getId() > 0) {
-      System.out.println("update: , "+patient.toString());
+      System.out.println("[update]: , "+patient.getName());
 
       patientRepository.save(patient); // save or alter
     }
@@ -46,7 +45,7 @@ public class PatientREST {
 
   @DeleteMapping
   public void deletePatient(@RequestBody Patient patient) {
-    System.out.println("Removendo: , "+patient.toString());
+    System.out.println("[remove]: "+patient.getName());
     patientRepository.delete(patient);
   }
 }
