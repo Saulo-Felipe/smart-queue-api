@@ -22,6 +22,10 @@ public class Patient {
   @Column(nullable = false)
   private String gender;
 
+  @Column(nullable = false)
+  private boolean ispriority;
+
+
 
   public Long getId() {
     return id;
@@ -53,6 +57,14 @@ public class Patient {
 
   public void setGender(String gender) {
     this.gender = gender;
+  }
+
+  public boolean getIsPriority() {
+    return this.ispriority;
+  }
+
+  public void setIsPriority(boolean isPriority) {
+    this.ispriority = isPriority;
   }
 
   

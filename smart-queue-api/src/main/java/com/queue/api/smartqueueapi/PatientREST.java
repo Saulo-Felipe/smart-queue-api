@@ -3,6 +3,7 @@ package com.queue.api.smartqueueapi;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +16,7 @@ import com.queue.api.smartqueueapi.entity.Patient;
 import com.queue.api.smartqueueapi.repositories.PatientRepository;
 
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/api/patient")
 public class PatientREST {
@@ -29,7 +31,7 @@ public class PatientREST {
 
   @PostMapping
   public void createPatient(@RequestBody Patient patient) {
-    System.out.println("[create]: , "+patient.getName());
+    System.out.println("[create]: , "+patient.getIsPriority());
     patientRepository.save(patient);
   }
 
